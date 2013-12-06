@@ -1,0 +1,32 @@
+Hello !
+<form method="POST" action="">
+
+<ul>
+    <li>
+        <label>ATT ROUGE</label>
+        {{ form_widget(form.player[0].player_id) }}
+        <button type="button">+1</button>
+    </li>
+    <li>
+        <label>DEF ROUGE</label>
+        {{ form_widget(form.player[1].player_id) }}
+        <button type="button">+1</button>
+    </li>
+    <li>
+        <label>ATT BLEU</label>
+        {{ form_widget(form.player[2].player_id) }}
+        <button type="button">+1</button>
+    </li>
+    <li>
+        <label>DEF BLEU</label>
+        {{ form_widget(form.player[3].player_id) }}
+        <button type="button">+1</button>
+    </li>
+</ul>
+
+{{ form_rest(form) }}
+
+
+<button type="submit">Finish</button>
+
+</form>

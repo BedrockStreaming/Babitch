@@ -1,0 +1,142 @@
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+html, body {
+    background-color: #ecf0f1;
+    font-family: "Sintony";
+    font-size: 100%;
+    height: 100%;
+}
+
+#game {
+    height: 100%;
+}
+
+.score {
+    background-color: #4a4d50;
+    color: #effeff;
+    height: 10%;
+    line-height: 2em;
+    text-align: center;
+}
+
+.score ul {
+    height: 100%;
+}
+
+.score ul li {
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+}
+
+.players {
+    height: 70%;
+    text-align: center;
+}
+
+.players ul {
+    height: 100%;
+    list-style: none;
+}
+
+.players ul li {
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+
+.players ul li.blue.defense {
+    background-color: #3498db;
+}
+.players ul li.blue.attack {
+    background-color: #2980b9;
+}
+
+.players ul li.red.defense {
+    background-color: #e74c3c;
+}
+
+.players ul li.red.attack {
+    background-color: #ca3838;
+}
+
+.players ul li label {
+    display: block;
+    height: 15%;
+}
+
+.players ul li select {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: none;
+    height: 20%;
+}
+.players ul li .spacer {
+    height: 10%;
+}
+
+.players ul li button {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 20%;
+}
+
+.actionStart {
+    height: 10%;
+}
+
+.actionStart button {
+    background-color: #1abc9c;
+    color: #effeff;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.actionStart {
+    height: 20%;
+}
+
+.actionStart button {
+    background-color: #42a35a;
+    border: none;
+    color: #effeff;
+    width: 100%;
+    height: 100%;
+}
+
+.actionCancel,
+.actionCoach {
+    height: 10%;
+}
+
+.actionCancel button,
+.actionCoach button {
+    color: #effeff;
+    border: none;
+    background-color: #42a35a;
+    width: 100%;
+    height: 100%;
+}
+
+.actionCoach button {
+    width: 50%;
+    float: left;
+}
+.actionCoach button.red {
+    background-color: #7f8c8d;
+}
+
+.actionCoach button.blue {
+    background-color: #95a5a6;
+}

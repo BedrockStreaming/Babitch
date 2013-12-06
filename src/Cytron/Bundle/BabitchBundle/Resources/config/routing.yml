@@ -1,0 +1,7 @@
+CytronBabitchBundle_Game:
+    resource: "@CytronBabitchBundle/Controller/GameController.php"
+    type:     rest
+
+CytronBabitchBundle_Player:
+    resource: "@CytronBabitchBundle/Controller/PlayerController.php"
+    type:     rest

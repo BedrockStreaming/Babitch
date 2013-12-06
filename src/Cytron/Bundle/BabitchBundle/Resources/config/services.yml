@@ -1,0 +1,22 @@
+parameters:
+    cytron_babitch.game.manager.class: 'Cytron\Bundle\BabitchBundle\Manager\GameManager'
+    cytron_babitch.game.entity.name:   'CytronBabitchBundle:Game'
+
+    cytron_babitch.game_player.manager.class: 'Cytron\Bundle\BabitchBundle\Manager\GamePlayerManager'
+    cytron_babitch.game_player.entity.name:   'CytronBabitchBundle:GamePlayer'
+
+    cytron_babitch.player.manager.class: 'Cytron\Bundle\BabitchBundle\Manager\PlayerManager'
+    cytron_babitch.player.entity.name:   'CytronBabitchBundle:Player'
+
+services:
+    cytron_babitch.game.manager:
+        class: %cytron_babitch.game.manager.class%
+        arguments: [ @doctrine.orm.entity_manager, %cytron_babitch.game.entity.name% ]
+
+    cytron_babitch.game_player.manager:
+        class: %cytron_babitch.game_player.manager.class%
+        arguments: [ @doctrine.orm.entity_manager, %cytron_babitch.game_player.entity.name% ]
+
+    cytron_babitch.player.manager:
+        class: %cytron_babitch.player.manager.class%
+        arguments: [ @doctrine.orm.entity_manager, %cytron_babitch.player.entity.name% ]
