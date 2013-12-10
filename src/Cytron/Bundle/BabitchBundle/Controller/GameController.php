@@ -32,7 +32,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      * @ApiDoc(
      *  section="Game",
      *   description="Create an game",
-     *   input="Cytron\Bundle\BabitchBundle\Form\GameType",
+     *   input={"class"="Cytron\Bundle\BabitchBundle\Form\GameType", "name"=""},
      *   output="Cytron\Bundle\BabitchBundle\Entity\Game",
      *   statusCodes={
      *     201="Game created",
@@ -136,7 +136,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      * @ApiDoc(
      *  section="Game",
      *   description="Update article",
-     *   input="Cytron\Bundle\BabitchBundle\Form\GameType",
+     *   input={"class"="Cytron\Bundle\BabitchBundle\Form\GameType", "name"=""},
      *   statusCodes={
      *     204="Game updated",
      *     400="Bad request",

@@ -32,7 +32,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      * @ApiDoc(
      *  section="Player",
      *   description="Create an player",
-     *   input="Cytron\Bundle\BabitchBundle\Form\PlayerType",
+     *   input={"class"="Cytron\Bundle\BabitchBundle\Form\PlayerType", "name"=""},
      *   output="Cytron\Bundle\BabitchBundle\Entity\Player",
      *   statusCodes={
      *     201="Player created",
@@ -136,7 +136,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      * @ApiDoc(
      *  section="Player",
      *   description="Update article",
-     *   input="Cytron\Bundle\BabitchBundle\Form\PlayerType",
+     *   input={"class"="Cytron\Bundle\BabitchBundle\Form\PlayerType", "name"=""},
      *   statusCodes={
      *     204="Player updated",
      *     400="Bad request",
