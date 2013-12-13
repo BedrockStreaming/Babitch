@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new FSC\HateoasBundle\FSCHateoasBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(), 
             new Cytron\Bundle\BabitchBundle\CytronBabitchBundle(),
         );
 

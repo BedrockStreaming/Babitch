@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d99f2b11846e0cb32410ab8fee59fb69",
+    "hash": "275b69324df831e4736aba51a9b97867",
     "packages": [
         {
             "name": "adrienbrault/form-serializer",
-            "version": "0.1.3",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adrienbrault/form-serializer.git",
-                "reference": "1ad55bd957edde43718c9787a0db6a175f588b0d"
+                "reference": "7a782af9573fac94e25d0ab759a49dd74eec7745"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adrienbrault/form-serializer/zipball/1ad55bd957edde43718c9787a0db6a175f588b0d",
-                "reference": "1ad55bd957edde43718c9787a0db6a175f588b0d",
+                "url": "https://api.github.com/repos/adrienbrault/form-serializer/zipball/7a782af9573fac94e25d0ab759a49dd74eec7745",
+                "reference": "7a782af9573fac94e25d0ab759a49dd74eec7745",
                 "shasum": ""
             },
             "require": {
@@ -25,8 +25,11 @@
             },
             "require-dev": {
                 "jms/serializer": "~0.13",
+                "jms/serializer-bundle": "~0.13",
                 "phpunit/phpunit": "~3.7",
-                "symfony/http-foundation": "~2.1"
+                "symfony/framework-bundle": "~2.2",
+                "symfony/http-foundation": "~2.2",
+                "symfony/validator": "~2.2"
             },
             "type": "library",
             "autoload": {
@@ -39,7 +42,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2013-10-15 03:12:14"
+            "time": "2013-12-06 18:38:44"
         },
         {
             "name": "dflydev/markdown",
@@ -138,7 +141,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -280,7 +283,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -552,7 +555,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1322,6 +1325,60 @@
             "time": "2013-12-05 20:36:37"
         },
         {
+            "name": "nelmio/cors-bundle",
+            "version": "1.2.0",
+            "target-dir": "Nelmio/CorsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/NelmioCorsBundle.git",
+                "reference": "6deee94475a9e0f29350d24bc17ea890e981faff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nelmio/NelmioCorsBundle/zipball/6deee94475a9e0f29350d24bc17ea890e981faff",
+                "reference": "6deee94475a9e0f29350d24bc17ea890e981faff",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "~2.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Nelmio\\CorsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelmio",
+                    "homepage": "http://nelm.io"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/nelmio/NelmioCorsBundle/contributors"
+                }
+            ],
+            "description": "Adds CORS (Cross-Origin Resource Sharing) headers support in your Symfony2 application",
+            "keywords": [
+                "api",
+                "cors",
+                "crossdomain"
+            ],
+            "time": "2013-10-29 13:11:23"
+        },
+        {
             "name": "phpcollection/phpcollection",
             "version": "0.2.0",
             "source": {
@@ -1553,20 +1610,21 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.0.0",
+            "version": "v1.2.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783"
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
                 "shasum": ""
             },
             "require": {
+                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1596,7 +1654,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:07"
+            "time": "2013-06-03 18:32:58"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1815,16 +1873,16 @@
         },
         {
             "name": "willdurand/negotiation",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/Negotiation.git",
-                "reference": "d5d080d5405e3e0895038b5b578458884cdf8af6"
+                "reference": "366e31cfc247946dfe8c622bc00041964e9b294f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/d5d080d5405e3e0895038b5b578458884cdf8af6",
-                "reference": "d5d080d5405e3e0895038b5b578458884cdf8af6",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/366e31cfc247946dfe8c622bc00041964e9b294f",
+                "reference": "366e31cfc247946dfe8c622bc00041964e9b294f",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +1919,7 @@
                 "header",
                 "negotiation"
             ],
-            "time": "2013-11-21 10:29:12"
+            "time": "2013-11-26 14:42:16"
         }
     ],
     "packages-dev": [
