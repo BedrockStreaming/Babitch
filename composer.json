@@ -18,7 +18,8 @@
         "friendsofsymfony/rest-bundle"   : "1.0.*",
         "jms/serializer-bundle"          : "0.12.*",
         "fsc/hateoas-bundle": "0.5.x-dev",
-        "nelmio/api-doc-bundle"          : "~2.4"
+        "nelmio/api-doc-bundle"          : "~2.4",
+        "nelmio/cors-bundle" : "~1.0"
     },
     "scripts": {
         "post-install-cmd": [
