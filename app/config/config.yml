@@ -36,9 +36,7 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: %kernel.root_dir%/data/data.db3
-        # path:     %database_path%
+        path:     %database_path%
 
     orm:
         entity_managers:
@@ -85,4 +83,4 @@ nelmio_cors:
         '^/v1/.*\D$':
             allow_origin:  ['*']
             allow_headers: ['X-Requested-With', 'Content-Type']
-            allow_methods: ['GET', 'POST'] 
+            allow_methods: ['GET', 'POST']
