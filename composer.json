@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "m6web/babitch",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Babitch is a project to record babyfoot scores, archive them, and make them easily accessible for further analysis.",
     "autoload": {
         "psr-0": { "": "src/" }
     },
