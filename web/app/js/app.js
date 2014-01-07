@@ -102,6 +102,17 @@ angular.
             }
         };
 
+        $scope.cancelGoal = function () {
+            var lastGoal = $scope.game.goals.pop();
+            console.log(lastGoal);
+            var conceder = $scope.game.player.filter(function (p) {return p.player_id == lastGoal.conceder_id})[0];
+            if (conceder.team == 'red') {
+                $scope.game.blue_score--;
+            } else {
+                $scope.game.red_score--;
+            }
+        };
+
         $scope.cancelGame = function () {
             $scope.gameStarted = false;
         };
