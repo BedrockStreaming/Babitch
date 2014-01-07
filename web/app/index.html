@@ -43,7 +43,8 @@
         </div>
 
         <div class="actionCancel" ng-show="gameStarted">
-            <button ng-click="initGame()">Cancel</button>
+            <button ng-hide="game.goals.length" ng-click="initGame()">Cancel</button>
+            <button ng-show="game.goals.length" ng-click="cancelGoal()">Cancel last goal</button>
         </div>
     </div>
 </body>
