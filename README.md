@@ -2,8 +2,9 @@
 
 Many companies all over the world uses babyfoot to build team spirit. Babitch is a project to **record** babyfoot scores, **archive** them, and **make them easily accessible for** further analysis.
 
-Babitch provides a simple responsive user interface to record scores, store them in a simple MySQL database and make them easily accessible by a REST API.
+Babitch provides a REST API to record scores and store them in a simple MySQL database.
 
+See [BabitchClient](https://github.com/M6Web/BabitchClient) for a simple responsive user interface to this api.
 
 ## Installation
 
@@ -31,7 +32,6 @@ Edit this new file to setup your MySQL connection.
 
 ## Use
 
-* User interface to record scores : `http://babitch-server/app/index.html`,
 * REST API : `http://babitch-server/api/doc/`
 
 *Note : don't forget to add users with the API.*
