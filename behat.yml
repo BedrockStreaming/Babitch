@@ -1,0 +1,11 @@
+default:
+    extensions:
+        Sanpi\Behatch\Extension:
+            contexts:
+                json: ~
+                rest: ~
+        Behat\Symfony2Extension\Extension: 
+            bundle: CytronBabitchBundle
+            mink_driver: true
+        Behat\MinkExtension\Extension:
+            default_session: symfony2
