@@ -36,9 +36,21 @@ Edit this new file to setup your MySQL connection.
 
 *Note : don't forget to add users with the API.*
 
+## Tests
+
+Create test database
+```shell
+php app/console doctrine:database:create --env=test
+php app/console doctrine:schema:create --env=test
+```
+Run tests
+```shell
+php bin/behat
+```
+
 ## Credits
 
-Developped by the [Cytron Team](http://cytron.fr/) of [M6 Web](http://tech.m6web.fr/).  
+Developped by the [Cytron Team](http://cytron.fr/) of [M6 Web](http://tech.m6web.fr/).
 
 ## License
 
