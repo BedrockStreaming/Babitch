@@ -1,0 +1,10 @@
+language: php
+php:
+  - 5.4
+before_script:
+    - wget http://getcomposer.org/composer.phar
+    - php composer.phar install
+    - php app/console doctrine:database:create --env=test
+    - php app/console doctrine:schema:create --env=test
+script:
+    php bin/behat

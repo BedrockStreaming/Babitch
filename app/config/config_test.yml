@@ -1,6 +1,10 @@
 imports:
     - { resource: config_dev.yml }
 
+parameters:
+    database_driver: pdo_sqlite
+    database_path: %kernel.cache_dir%/db.sqlite.db
+
 framework:
     test: ~
     session:
@@ -11,6 +15,3 @@ framework:
 web_profiler:
     toolbar: false
     intercept_redirects: false
-
-swiftmailer:
-    disable_delivery: true
