@@ -70,7 +70,7 @@ $ php composer.phar install
 
 *Note : select default values to all questions.*
 
-You can now access to the API doc at `http://localhost:8888/api/doc`.
+You can now access the API doc at `http://localhost:8888/api/doc`.
 
 ## Tests
 
