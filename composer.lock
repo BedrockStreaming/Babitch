@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "848dc5a4f8393c55fe7d65dbbe985d19",
+    "hash": "70838171d2a4d017c90a7176138549d3",
     "packages": [
         {
             "name": "adrienbrault/form-serializer",
@@ -235,7 +235,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -302,7 +302,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1435,16 +1435,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "1c7e8016289d17d83ced49c56d0f266fd0568941"
+                "reference": "5d099bcf0393908bf4ad69cc47dafb785d51f7f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/1c7e8016289d17d83ced49c56d0f266fd0568941",
-                "reference": "1c7e8016289d17d83ced49c56d0f266fd0568941",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/5d099bcf0393908bf4ad69cc47dafb785d51f7f5",
+                "reference": "5d099bcf0393908bf4ad69cc47dafb785d51f7f5",
                 "shasum": ""
             },
             "require": {
@@ -1480,7 +1480,7 @@
                 "php",
                 "type"
             ],
-            "time": "2013-05-19 11:09:35"
+            "time": "2014-01-09 22:37:17"
         },
         {
             "name": "psr/log",
@@ -1615,20 +1615,21 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.0.0",
+            "version": "v1.2.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783"
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
                 "shasum": ""
             },
             "require": {
+                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1658,7 +1659,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:07"
+            "time": "2013-06-03 18:32:58"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1928,326 +1929,111 @@
     ],
     "packages-dev": [
         {
-            "name": "behat/behat",
-            "version": "v2.5.1",
+            "name": "atoum/atoum",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Behat/Behat.git",
-                "reference": "b688e3c4bd65ef867d2ec0a0cf8e621c166e259b"
+                "url": "https://github.com/atoum/atoum.git",
+                "reference": "e58c072c3066da6c18741cfb96121412b7a70eae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/b688e3c4bd65ef867d2ec0a0cf8e621c166e259b",
-                "reference": "b688e3c4bd65ef867d2ec0a0cf8e621c166e259b",
+                "url": "https://api.github.com/repos/atoum/atoum/zipball/e58c072c3066da6c18741cfb96121412b7a70eae",
+                "reference": "e58c072c3066da6c18741cfb96121412b7a70eae",
                 "shasum": ""
             },
             "require": {
-                "behat/gherkin": "~2.3.0",
-                "php": ">=5.3.1",
-                "symfony/config": "~2.0",
-                "symfony/console": "~2.0",
-                "symfony/dependency-injection": "~2.0",
-                "symfony/event-dispatcher": "~2.0",
-                "symfony/finder": "~2.0",
-                "symfony/translation": "~2.0",
-                "symfony/yaml": "~2.0"
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-session": "*",
+                "ext-tokenizer": "*",
+                "ext-xml": "*",
+                "php": ">=5.3.3"
             },
-            "require-dev": {
-                "phpunit/phpunit": "~3.7.19"
+            "replace": {
+                "mageekguy/atoum": "*"
             },
             "suggest": {
-                "behat/mink-extension": "for integration with Mink testing framework",
-                "behat/symfony2-extension": "for integration with Symfony2 web framework",
-                "behat/yii-extension": "for integration with Yii web framework"
+                "ext-mbstring": "Provides support for UTF-8 strings"
             },
             "bin": [
-                "bin/behat"
+                "bin/atoum"
             ],
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Behat\\Behat": "src/"
-                }
+                "classmap": [
+                    "classes/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD"
             ],
             "authors": [
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Scenario-oriented BDD framework for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "BDD",
-                "Behat",
-                "Symfony2"
-            ],
-            "time": "2013-11-24 10:17:18"
-        },
-        {
-            "name": "behat/gherkin",
-            "version": "v2.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "2b33963da5525400573560c173ab5c9c057e1852"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/2b33963da5525400573560c173ab5c9c057e1852",
-                "reference": "2b33963da5525400573560c173ab5c9c057e1852",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/finder": "~2.0"
-            },
-            "require-dev": {
-                "symfony/config": "~2.0",
-                "symfony/translation": "~2.0",
-                "symfony/yaml": "~2.0"
-            },
-            "suggest": {
-                "symfony/config": "If you want to use Config component to manage resources",
-                "symfony/translation": "If you want to use Symfony2 translations adapter",
-                "symfony/yaml": "If you want to parse features, represented in YAML files"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Gherkin": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+                    "name": "Frédéric Hardy",
+                    "email": "frederic.hardy@atoum.org",
+                    "homepage": "http://blog.mageekbox.net"
+                },
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Gherkin DSL parser for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "BDD",
-                "Behat",
-                "DSL",
-                "Symfony2",
-                "parser"
-            ],
-            "time": "2013-10-15 11:22:17"
-        },
-        {
-            "name": "behat/mink",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Mink.git",
-                "reference": "0769e6d9726c140a54dbf827a438c0f9912749fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Mink/zipball/0769e6d9726c140a54dbf827a438c0f9912749fe",
-                "reference": "0769e6d9726c140a54dbf827a438c0f9912749fe",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/css-selector": "~2.0"
-            },
-            "suggest": {
-                "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
-                "behat/mink-goutte-driver": "fast headless driver for any app without JS emulation",
-                "behat/mink-selenium2-driver": "slow, but JS-enabled driver for any app (requires Selenium2)",
-                "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Mink": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+                    "name": "François Dussert",
+                    "email": "francois.dussert@atoum.org"
+                },
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Web acceptance testing framework for PHP 5.3",
-            "homepage": "http://mink.behat.org/",
-            "keywords": [
-                "browser",
-                "testing",
-                "web"
-            ],
-            "time": "2013-04-13 23:39:27"
-        },
-        {
-            "name": "behat/mink-browserkit-driver",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/MinkBrowserKitDriver.git",
-                "reference": "63960c8fcad4529faad1ff33e950217980baa64c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/MinkBrowserKitDriver/zipball/63960c8fcad4529faad1ff33e950217980baa64c",
-                "reference": "63960c8fcad4529faad1ff33e950217980baa64c",
-                "shasum": ""
-            },
-            "require": {
-                "behat/mink": "~1.5.0",
-                "php": ">=5.3.1",
-                "symfony/browser-kit": "~2.0",
-                "symfony/dom-crawler": "~2.0"
-            },
-            "require-dev": {
-                "silex/silex": "@dev"
-            },
-            "type": "mink-driver",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Mink\\Driver": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+                    "name": "Gérald Croes",
+                    "email": "gerald.croes@atoum.org"
+                },
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Symfony2 BrowserKit driver for Mink framework",
-            "homepage": "http://mink.behat.org/",
-            "keywords": [
-                "Mink",
-                "Symfony2",
-                "browser",
-                "testing"
-            ],
-            "time": "2013-04-13 23:46:30"
-        },
-        {
-            "name": "behat/mink-extension",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/MinkExtension.git",
-                "reference": "0b7223826341fad69b4600afe27722d2a2f9a306"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/MinkExtension/zipball/0b7223826341fad69b4600afe27722d2a2f9a306",
-                "reference": "0b7223826341fad69b4600afe27722d2a2f9a306",
-                "shasum": ""
-            },
-            "require": {
-                "behat/behat": "~2.5.0",
-                "behat/mink": ">=1.4.3,<1.6-dev",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "behat/mink-goutte-driver": "~1.0"
-            },
-            "type": "behat-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\MinkExtension": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+                    "name": "Julien Bianchi",
+                    "email": "julien.bianchi@atoum.org"
+                },
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
+                    "name": "Ludovic Fleury",
+                    "email": "ludovic.fleury@atoum.org"
                 }
             ],
-            "description": "Mink extension for Behat",
-            "homepage": "http://mink.behat.org",
+            "description": "Simple modern and intuitive unit testing framework for PHP 5.3+",
+            "homepage": "http://www.atoum.org",
             "keywords": [
-                "browser",
-                "gui",
+                "TDD",
+                "atoum",
                 "test",
-                "web"
+                "unit testing"
             ],
-            "time": "2013-08-17 19:01:06"
+            "time": "2014-01-17 13:12:15"
         },
         {
-            "name": "behat/symfony2-extension",
-            "version": "v1.1.1",
+            "name": "atoum/atoum-bundle",
+            "version": "dev-master",
+            "target-dir": "atoum/AtoumBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Behat/Symfony2Extension.git",
-                "reference": "7d9c14cf8d56fe1ba7569b35bbd89e5426342c46"
+                "url": "https://github.com/atoum/AtoumBundle.git",
+                "reference": "8a267df5294f476160583f22660e449f4de8986f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Symfony2Extension/zipball/7d9c14cf8d56fe1ba7569b35bbd89e5426342c46",
-                "reference": "7d9c14cf8d56fe1ba7569b35bbd89e5426342c46",
+                "url": "https://api.github.com/repos/atoum/AtoumBundle/zipball/8a267df5294f476160583f22660e449f4de8986f",
+                "reference": "8a267df5294f476160583f22660e449f4de8986f",
                 "shasum": ""
             },
             "require": {
-                "behat/behat": "~2.5.0",
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.0"
+                "atoum/atoum": "dev-master",
+                "fzaninotto/faker": "1.*",
+                "php": ">=5.3.3",
+                "symfony/css-selector": "2.*",
+                "symfony/dom-crawler": "2.*",
+                "symfony/finder": "2.*",
+                "symfony/framework-bundle": "2.*"
             },
-            "require-dev": {
-                "behat/mink-browserkit-driver": "~1.0",
-                "behat/mink-extension": "~1.0",
-                "phpunit/phpunit": "~3.7",
-                "symfony/symfony": "~2.1"
+            "replace": {
+                "jedi/atoum-bundle": "*",
+                "rezzza/atoum-bundle": "*"
             },
-            "type": "behat-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
+            "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
-                    "Behat\\Symfony2Extension": "src/"
+                    "atoum\\AtoumBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2256,130 +2042,68 @@
             ],
             "authors": [
                 {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
+                    "name": "Florian Lonqueu-Brochard",
+                    "email": "dev@florianlb.fr"
+                },
+                {
+                    "name": "Community contributors",
+                    "homepage": "https://github.com/atoum/AtoumBundle/graphs/contributors"
                 }
             ],
-            "description": "Symfony2 framework extension for Behat",
-            "homepage": "http://behat.org",
+            "description": "Bundle around atoum unit testing framework",
+            "homepage": "https://github.com/atoum/AtoumBundle",
             "keywords": [
-                "BDD",
-                "framework",
-                "symfony"
+                "atoum",
+                "test",
+                "unit testing"
             ],
-            "time": "2014-01-03 22:07:32"
+            "time": "2013-10-22 13:09:56"
         },
         {
-            "name": "justinrainbow/json-schema",
-            "version": "1.3.5",
+            "name": "fzaninotto/faker",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "01949f6d2130e9737ffae5d3952909a8de70d114"
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "1d143fd8caf4d264602450bc01d7484af788706b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/01949f6d2130e9737ffae5d3952909a8de70d114",
-                "reference": "01949f6d2130e9737ffae5d3952909a8de70d114",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/1d143fd8caf4d264602450bc01d7484af788706b",
+                "reference": "1d143fd8caf4d264602450bc01d7484af788706b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.3"
             },
-            "require-dev": {
-                "json-schema/json-schema-test-suite": "1.1.0",
-                "phpdocumentor/phpdocumentor": "~2",
-                "phpunit/phpunit": "~3.7"
-            },
-            "bin": [
-                "bin/validate-json"
-            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.3.0-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "JsonSchema": "src/"
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Igor Wiedler",
-                    "email": "igor@wiedler.ch",
-                    "homepage": "http://wiedler.ch/igor/"
-                },
-                {
-                    "name": "Bruno Prieto Reis",
-                    "email": "bruno.p.reis@gmail.com"
-                },
-                {
-                    "name": "Justin Rainbow",
-                    "email": "justin.rainbow@gmail.com"
-                },
-                {
-                    "name": "Robert Schönthal",
-                    "email": "seroscho@googlemail.com",
-                    "homepage": "http://digitalkaoz.net"
+                    "name": "François Zaninotto"
                 }
             ],
-            "description": "A library to validate a json schema.",
-            "homepage": "https://github.com/justinrainbow/json-schema",
+            "description": "Faker is a PHP library that generates fake data for you.",
             "keywords": [
-                "json",
-                "schema"
+                "data",
+                "faker",
+                "fixtures"
             ],
-            "time": "2013-12-13 15:21:04"
-        },
-        {
-            "name": "sanpi/behatch-contexts",
-            "version": "1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sanpii/behatch-contexts.git",
-                "reference": "5eecf620927201ff2e6bdafcec2bc4241ece65e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sanpii/behatch-contexts/zipball/5eecf620927201ff2e6bdafcec2bc4241ece65e6",
-                "reference": "5eecf620927201ff2e6bdafcec2bc4241ece65e6",
-                "shasum": ""
-            },
-            "require": {
-                "behat/behat": "*",
-                "behat/mink": "*",
-                "behat/mink-extension": "*",
-                "justinrainbow/json-schema": "*"
-            },
-            "require-dev": {
-                "behat/mink-goutte-driver": "*",
-                "behat/mink-selenium2-driver": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Sanpi\\Behatch": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "beerware"
-            ],
-            "description": "Behatch contexts",
-            "keywords": [
-                "BDD",
-                "Behat",
-                "Context",
-                "Symfony2"
-            ],
-            "time": "2013-12-17 10:12:28"
+            "time": "2013-12-16 21:56:48"
         }
     ],
     "aliases": [
@@ -2387,7 +2111,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fsc/hateoas-bundle": 20
+        "fsc/hateoas-bundle": 20,
+        "atoum/atoum-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

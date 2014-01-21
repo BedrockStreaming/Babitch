@@ -7,4 +7,4 @@ before_script:
     - php app/console doctrine:database:create --env=test
     - php app/console doctrine:schema:create --env=test
 script:
-    php bin/behat
+    php app/console atoum --env=test

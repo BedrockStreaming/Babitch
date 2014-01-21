@@ -17,13 +17,17 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new FSC\HateoasBundle\FSCHateoasBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
-            new Nelmio\CorsBundle\NelmioCorsBundle(), 
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
             new Cytron\Bundle\BabitchBundle\CytronBabitchBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+        }
+
+        if (in_array($this->getEnvironment(), array('test'))) {
+            $bundles[] = new atoum\AtoumBundle\AtoumAtoumBundle();
         }
 
         return $bundles;
