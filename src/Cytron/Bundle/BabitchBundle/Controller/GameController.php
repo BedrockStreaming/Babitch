@@ -101,7 +101,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      * @return \FOS\RestBundle\View\View
      *
      * @QueryParam(name="page", requirements="\d+", default="1", description="Current page index")
-     * @QueryParam(name="per_page", requirements="\d+", default="20", description="Number of elements displayed per page")
+     * @QueryParam(name="per_page", requirements="\d+", default="50", description="Number of elements displayed per page")
      *
      * @ApiDoc(
      *  section="Game",
