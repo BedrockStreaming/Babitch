@@ -28,8 +28,49 @@ Edit this new file to setup your MySQL connection.
 
 ## Use
 
-The API documentation is available at `http://babitch-server/api/doc/`  
-You have to create a client to access Babitch's API, or you can use ours : [BabitchClient](https://github.com/M6Web/BabitchClient)
+The API documentation is available at `http://babitch-server/api/doc/`
+
+Then, you have to create a client to access Babitch's API, or you can use ours : [BabitchClient](https://github.com/M6Web/BabitchClient)
+
+## Installation for dev
+
+#### Clone the project
+
+```
+$ git clone https://github.com/M6Web/Babitch.git
+$ cd Babitch
+```
+
+Install [Vagrant](http://www.vagrantup.com/downloads) and configure `Vagrantfile` :
+
+```
+$ cp Vagrantfile.dist Vagrantfile
+```
+
+*Note : configure your own Vagrantfile if necessary.*
+
+```
+$ vagrant up
+$ vagrant ssh
+$ cd /vagrant
+```
+
+#### Create MySQL database
+
+```
+$ mysql -uroot -e "CREATE DATABASE babitch DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
+```
+
+#### Install dependencies
+
+```
+$ curl -s http://getcomposer.org/installer | php
+$ php composer.phar install
+```
+
+*Note : select default values to all questions.*
+
+You can now access to the API doc at `http://localhost:8888/api/doc`.
 
 ## Tests
 
@@ -39,6 +80,7 @@ Create test database
 php app/console doctrine:database:create --env=test
 php app/console doctrine:schema:create --env=test
 ```
+
 Run tests
 
 ```shell
