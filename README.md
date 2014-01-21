@@ -45,7 +45,7 @@ php app/console doctrine:schema:create --env=test
 ```
 Run tests
 ```shell
-./vendor/bin/atoum --env=test
+php app/console atoum --env=test
 ```
 
 ## Credits
