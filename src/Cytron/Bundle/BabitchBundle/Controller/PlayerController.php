@@ -31,7 +31,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *  section="Player",
-     *   description="Create an player",
+     *   description="Create a player",
      *   input={"class"="Cytron\Bundle\BabitchBundle\Form\PlayerType", "name"=""},
      *   output="Cytron\Bundle\BabitchBundle\Entity\Player",
      *   statusCodes={
@@ -69,7 +69,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *  section="Player",
-     *   description="Get article details",
+     *   description="Get a player's details",
      *   output="Cytron\Bundle\BabitchBundle\Entity\Player",
      *   statusCodes={
      *     200="OK",
@@ -77,7 +77,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *     404="Player not found"
      *   }
      * )
-     * 
+     *
      * @Route(requirements={
      *   "id"="\d+"
      * })
@@ -105,7 +105,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *  section="Player",
-     *   description="Get article list",
+     *   description="Get players list",
      *   output="Cytron\Bundle\BabitchBundle\Entity\Player",
      *   statusCodes={
      *     200="OK",
@@ -135,7 +135,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *  section="Player",
-     *   description="Update article",
+     *   description="Update a player",
      *   input={"class"="Cytron\Bundle\BabitchBundle\Form\PlayerType", "name"=""},
      *   statusCodes={
      *     204="Player updated",
@@ -178,7 +178,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *  section="Player",
-     *   description="Delete article",
+     *   description="Delete a player",
      *   statusCodes={
      *     204="Player deleted",
      *     404="Player not found"
