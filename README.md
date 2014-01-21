@@ -1,6 +1,6 @@
 # Babitch
 
-Many companies all over the world uses babyfoot to build team spirit. Babitch is a project to **record** babyfoot scores, **archive** them, and **make them easily accessible for** further analysis using a REST API.
+Many companies all over the world uses table soccer to build team spirit. Babitch is a project to **record** table soccer scores, **archive** them, and **make them easily accessible for** further analysis using a REST API.
 
 ## Installation
 
