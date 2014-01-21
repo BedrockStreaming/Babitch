@@ -23,7 +23,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
     use PaginatorTrait;
 
     /**
-     * Create an game
+     * Create a game
      *
      * @param Request $request
      *
@@ -61,7 +61,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
     }
 
     /**
-     * Get game
+     * Get a game's details
      *
      * @param integer $id Game id
      *
@@ -94,7 +94,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
     }
 
     /**
-     * Game list
+     * Get games list
      *
      * @param ParamFetcher $paramFetcher
      *
@@ -124,7 +124,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
     }
 
     /**
-     * Update Game
+     * Update a game
      *
      * @param Request $request Request
      * @param integer $id      Game id
@@ -168,7 +168,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
     }
 
     /**
-     * Delete game
+     * Delete a game
      *
      * @param integer $id Game id
      *

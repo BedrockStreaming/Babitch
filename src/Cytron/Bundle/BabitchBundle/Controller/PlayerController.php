@@ -23,7 +23,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
     use PaginatorTrait;
 
     /**
-     * Create an player
+     * Create a player
      *
      * @param Request $request
      *
@@ -61,7 +61,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
     }
 
     /**
-     * Get player
+     * Get a player's details
      *
      * @param integer $id Player id
      *
@@ -94,7 +94,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
     }
 
     /**
-     * Player list
+     * Get players list
      *
      * @param ParamFetcher $paramFetcher
      *
@@ -124,7 +124,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
     }
 
     /**
-     * Update Player
+     * Update a player
      *
      * @param Request $request Request
      * @param integer $id      Player id
@@ -168,7 +168,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
     }
 
     /**
-     * Delete player
+     * Delete a player
      *
      * @param integer $id Player id
      *
