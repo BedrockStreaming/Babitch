@@ -9,3 +9,4 @@ build/
 vendor/
 composer.phar
 Vagrantfile
+.vagrant/
