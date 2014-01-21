@@ -12,6 +12,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use Cytron\Bundle\BabitchBundle\Form\PlayerType;
 use Cytron\Bundle\BabitchBundle\Controller\PaginatorTrait;
+use Cytron\Bundle\BabitchBundle\Controller\CheckRequestParamsTrait;
 
 /**
  * Class PlayerController
@@ -21,6 +22,7 @@ use Cytron\Bundle\BabitchBundle\Controller\PaginatorTrait;
 class PlayerController extends FOSRestController implements ClassResourceInterface
 {
     use PaginatorTrait;
+    use CheckRequestParamsTrait;
 
     /**
      * Create an player
@@ -43,6 +45,8 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      */
     public function cpostAction(Request $request)
     {
+        $this->checkQueryParams(array());
+
         $manager = $this->get('cytron_babitch.player.manager');
         $entity  = $manager->create();
         $form    = $this->container->get('form.factory')->createNamed('', new PlayerType(), $entity);
@@ -64,6 +68,7 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      * Get player
      *
      * @param integer $id Player id
+     * @param ParamFetcher $paramFetcher Param Fetcher
      *
      * @return \FOS\RestBundle\View\View
      *
@@ -77,13 +82,13 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      *     404="Player not found"
      *   }
      * )
-     * 
-     * @Route(requirements={
-     *   "id"="\d+"
-     * })
+     *
+     * @Route(requirements={"id"="\d+"})
      */
-    public function getAction($id)
+    public function getAction($id, ParamFetcher $paramFetcher)
     {
+        $this->checkQueryParams($paramFetcher->all());
+
         $player = $this->get('cytron_babitch.player.manager')->getRepository()->find($id);
 
         if (is_null($player)) {
@@ -115,6 +120,8 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      */
     public function cgetAction(ParamFetcher $paramFetcher)
     {
+        $this->checkQueryParams($paramFetcher->all());
+
         list($start, $limit) = $this->getStartAndLimitFromParams($paramFetcher);
 
         $repository = $this->get('cytron_babitch.player.manager')->getRepository();
@@ -147,6 +154,8 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      */
     public function putAction(Request $request, $id)
     {
+        $this->checkQueryParams(array());
+
         $manager = $this->get('cytron_babitch.player.manager');
         $entity  = $manager->getRepository()->find($id);
 
@@ -187,6 +196,8 @@ class PlayerController extends FOSRestController implements ClassResourceInterfa
      */
     public function deleteAction($id)
     {
+        $this->checkQueryParams(array());
+
         $manager = $this->get('cytron_babitch.player.manager');
         $entity  = $manager->getRepository()->find($id);
 

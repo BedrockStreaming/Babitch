@@ -22,9 +22,7 @@
         "nelmio/cors-bundle": "~1.0"
     },
     "require-dev" :{
-        "sanpi/behatch-contexts"  : "~1.3.0",
-        "behat/symfony2-extension": "~1.1.1",
-        "behat/mink-browserkit-driver":  "*"
+        "atoum/atoum-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
@@ -35,9 +33,6 @@
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
         ]
-    },
-    "config": {
-        "bin-dir": "bin"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -45,7 +45,7 @@ php app/console doctrine:schema:create --env=test
 ```
 Run tests
 ```shell
-php bin/behat
+./vendor/bin/atoum --env=test
 ```
 
 ## Credits
