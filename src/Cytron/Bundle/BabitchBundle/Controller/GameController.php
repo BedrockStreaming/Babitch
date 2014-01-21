@@ -31,7 +31,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *
      * @ApiDoc(
      *  section="Game",
-     *   description="Create an game",
+     *   description="Create a game",
      *   input={"class"="Cytron\Bundle\BabitchBundle\Form\GameType", "name"=""},
      *   output="Cytron\Bundle\BabitchBundle\Entity\Game",
      *   statusCodes={
@@ -69,7 +69,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *
      * @ApiDoc(
      *  section="Game",
-     *   description="Get article details",
+     *   description="Get a game's details",
      *   output="Cytron\Bundle\BabitchBundle\Entity\Game",
      *   statusCodes={
      *     200="OK",
@@ -77,7 +77,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *     404="Game not found"
      *   }
      * )
-     * 
+     *
      * @Route(requirements={
      *   "id"="\d+"
      * })
@@ -105,7 +105,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *
      * @ApiDoc(
      *  section="Game",
-     *   description="Get article list",
+     *   description="Get games list",
      *   output="Cytron\Bundle\BabitchBundle\Entity\Game",
      *   statusCodes={
      *     200="OK",
@@ -135,7 +135,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *
      * @ApiDoc(
      *  section="Game",
-     *   description="Update article",
+     *   description="Update a game",
      *   input={"class"="Cytron\Bundle\BabitchBundle\Form\GameType", "name"=""},
      *   statusCodes={
      *     204="Game updated",
@@ -178,7 +178,7 @@ class GameController extends FOSRestController implements ClassResourceInterface
      *
      * @ApiDoc(
      *  section="Game",
-     *   description="Delete article",
+     *   description="Delete a game",
      *   statusCodes={
      *     204="Game deleted",
      *     404="Game not found"
