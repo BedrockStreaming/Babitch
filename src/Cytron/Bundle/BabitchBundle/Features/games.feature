@@ -35,3 +35,16 @@ Feature: Post new Game
             }
             """
         Then the response status code should be 201
+        And the header "location" should be equal to "http://localhost/v1/games/1"
+
+        When I send a GET request on "/v1/games/1"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the JSON node "blue_score" should be equal to "10"
+        And the JSON node "red_score" should be equal to "0"
+
+        When I send a DELETE request on "/v1/games/1"
+        Then the response status code should be 204
+
+        When I send a GET request on "/v1/games/1"
+        Then the response status code should be 404
