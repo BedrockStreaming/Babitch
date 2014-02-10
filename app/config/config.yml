@@ -55,7 +55,6 @@ fos_rest:
         include_format: false
     format_listener:
         rules:
-            - { host: localhost, priorities: ['xml', 'json'], fallback_format: xml } # For tests
             - { priorities: ['json'], fallback_format: json }
     view:
         view_response_listener: true

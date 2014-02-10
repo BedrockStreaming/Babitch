@@ -1,7 +1,0 @@
-{
-  "name": "babitch",
-  "version": "v1.0.0",
-  "dependencies": {
-    "angular": "~1.2.0"
-  }
-}
