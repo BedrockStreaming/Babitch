@@ -1,0 +1,50 @@
+Feature: Post new Game
+
+    Background:
+        Given I have players:
+        |raoul1|raoul1@test.fr|
+        |raoul2|raoul2@test.fr|
+        |raoul3|raoul3@test.fr|
+        |raoul4|raoul4@test.fr|
+
+    Scenario: Create a new game
+        Given I add "CONTENT_TYPE" header equal to "application/json"
+        When I send a POST request on "/v1/games" with body:
+            """
+            {
+                "blue_score" : 10,
+                "red_score"  : 0,
+                "player"     : [
+                    {"team": "blue", "position" : "defense", "player_id" : 1 },
+                    {"team": "blue", "position" : "attack", "player_id" : 2},
+                    {"team": "red", "position" : "defense", "player_id" : 3},
+                    {"team": "red", "position" : "attack", "player_id" : 4}
+                ],
+                 "goals": [
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false }
+                ]
+            }
+            """
+        Then the response status code should be 201
+        And the header "location" should be equal to "http://localhost/v1/games/1"
+
+        When I send a GET request on "/v1/games/1"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the JSON node "blue_score" should be equal to "10"
+        And the JSON node "red_score" should be equal to "0"
+
+        When I send a DELETE request on "/v1/games/1"
+        Then the response status code should be 204
+
+        When I send a GET request on "/v1/games/1"
+        Then the response status code should be 404

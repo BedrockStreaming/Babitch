@@ -5,6 +5,9 @@ namespace Cytron\Bundle\BabitchBundle\Features\Context;
 use Behat\Behat\Context\BehatContext;
 use Sanpi\Behatch\Context\BehatchContext;
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Behat\Event\ScenarioEvent;
+use Behat\Gherkin\Node\TableNode;
+use Cytron\Bundle\BabitchBundle\Entity\Player;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -16,8 +19,10 @@ use Symfony\Component\Console\Output\NullOutput;
 */
 class FeatureContext extends BehatContext implements KernelAwareInterface
 {
+
     /**
-     * symfony Kernel
+     * Symfony2 kernel
+     * @var KernelInterface
      */
     protected $kernel;
 
@@ -33,6 +38,31 @@ class FeatureContext extends BehatContext implements KernelAwareInterface
     {
         $this->useContext('mink', new MinkContext($parameters));
         $this->useContext('behatch', new BehatchContext($parameters));
+    }
+
+    /**
+     * Sets Kernel instance.
+     *
+     * @param KernelInterface $kernel HttpKernel instance
+     */
+    public function setKernel(KernelInterface $kernel)
+    {
+        $this->kernel = $kernel;
+    }
+
+    /**
+     * @Given /^I have players:$/
+     */
+    public function iHavePlayers(TableNode $table)
+    {
+        $playerManager = $this->kernel->getContainer()->get('cytron_babitch.player.manager');
+
+        foreach ($table->getRows() as $row) {
+            $player = new Player();
+            $player->setName($row[0]);
+            $player->setEmail($row[1]);
+            $playerManager->persist($player, true);
+        }
     }
 
     /** @BeforeScenario */
@@ -78,11 +108,4 @@ class FeatureContext extends BehatContext implements KernelAwareInterface
         $application->run($input, new NullOutput());
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setKernel(KernelInterface $kernel)
-    {
-        $this->kernel = $kernel;
-    }
 }
