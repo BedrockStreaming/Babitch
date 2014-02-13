@@ -20,7 +20,7 @@ trait PaginatorTrait
      *
      * @return array(start, limit)
      */
-    public function getStartAndLimit($page, $perPage = 10, $maxPerPage = 100)
+    public function getStartAndLimit($page, $perPage = 10, $maxPerPage = 300)
     {
         $page    = max($page, 1);
         $perPage = max(min($perPage, $maxPerPage), 1);
