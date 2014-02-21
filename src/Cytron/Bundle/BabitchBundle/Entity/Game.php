@@ -60,6 +60,18 @@ class Game extends AbstractEntity
     protected $goals;
 
     /**
+     * @ORM\Column(name="started_at", type="datetime", nullable=true)
+     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     */
+    protected $startedAt;
+
+    /**
+     * @ORM\Column(name="ended_at", type="datetime", nullable=true)
+     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     */
+    protected $endedAt;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -230,5 +242,53 @@ class Game extends AbstractEntity
         $this->goals->removeElement($goal);
 
         return $this;
+    }
+
+    /**
+     * Set start date
+     *
+     * @param \DateTime $date Start date
+     *
+     * @return $this
+     */
+    public function setStartedAt(\DateTime $date = null)
+    {
+        $this->startedAt = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get start date
+     *
+     * @return \DateTime
+     */
+    public function getStartedAt()
+    {
+        return $this->startedAt;
+    }
+
+    /**
+     * Set end date
+     *
+     * @param \DateTime $date End date
+     *
+     * @return $this
+     */
+    public function setEndedAt(\DateTime $date = null)
+    {
+        $this->endedAt = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get end date
+     *
+     * @return \DateTime
+     */
+    public function getEndedAt()
+    {
+        return $this->endedAt;
     }
 }
