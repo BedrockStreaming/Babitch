@@ -24,7 +24,7 @@ Feature: Post new Game
                 ],
                  "goals": [
                     { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false, "scored_at": "2014-02-14 14:36:16" },
-                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false, "scored_at": "2014-02-14 14:36:26" },
+                    { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false },
                     { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false, "scored_at": "2014-02-14 14:36:36" },
                     { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false, "scored_at": "2014-02-14 14:36:46" },
                     { "player_id": 1, "conceder_id": 3, "position": "attack", "autogoal": false, "scored_at": "2014-02-14 14:36:56" },
@@ -46,6 +46,12 @@ Feature: Post new Game
         And the JSON node "red_score" should be equal to "0"
         And the JSON node "started_at" should be equal to "2014-02-14 14:32:19"
         And the JSON node "ended_at" should be equal to "2014-02-14 14:41:57"
+        And the JSON node "goals[0].player_id" should be equal to "1"
+        And the JSON node "goals[0].conceder_id" should be equal to "3"
+        And the JSON node "goals[0].position" should be equal to "attack"
+        And the JSON node "goals[0].autogoal" should be equal to "0"
+        And the JSON node "goals[0].scored_at" should be equal to "2014-02-14 14:36:16"
+        And the JSON node "goals[1].scored_at" should be equal to ""
 
         When I send a DELETE request on "/v1/games/1"
         Then the response status code should be 204
