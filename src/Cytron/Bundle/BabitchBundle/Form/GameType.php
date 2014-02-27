@@ -34,6 +34,14 @@ class GameType extends AbstractType
                 'allow_add'     => true,
                 'allow_delete'  => true,
                 'by_reference'  => false,
+            ))
+            ->add('started_at', 'datetime', array(
+                'widget' => 'single_text',
+                'format' => DateTimeType::HTML5_FORMAT,
+            ))
+            ->add('ended_at', 'datetime', array(
+                'widget' => 'single_text',
+                'format' => DateTimeType::HTML5_FORMAT,
             ));
     }
 

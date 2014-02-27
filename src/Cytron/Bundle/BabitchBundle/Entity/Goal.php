@@ -74,6 +74,12 @@ class Goal extends AbstractEntity
     protected $autogoal;
 
     /**
+     * @ORM\Column(name="scored_at", type="datetime", nullable=true)
+     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     */
+    protected $scoredAt;
+
+    /**
      * @return array
      */
     public static function getAllowedPositions()
@@ -230,5 +236,29 @@ class Goal extends AbstractEntity
     public function getAutogoal()
     {
         return $this->autogoal;
+    }
+
+    /**
+     * Set score date
+     *
+     * @param \DateTime $date Score date
+     *
+     * @return $this
+     */
+    public function setScoredAt(\DateTime $date = null)
+    {
+        $this->scoredAt = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get score date
+     *
+     * @return \DateTime
+     */
+    public function getScoredAt()
+    {
+        return $this->scoredAt;
     }
 }

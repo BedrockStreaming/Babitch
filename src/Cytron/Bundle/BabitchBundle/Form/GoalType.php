@@ -5,6 +5,7 @@ namespace Cytron\Bundle\BabitchBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Cytron\Bundle\BabitchBundle\Entity\Goal;
 
 /**
@@ -35,6 +36,10 @@ class GoalType extends AbstractType
                 'property_path' => 'conceder',
                 'class'         => 'CytronBabitchBundle:Player',
                 'property'      => 'name',
+            ))
+            ->add('scored_at', 'datetime', array(
+                'widget' => 'single_text',
+                'format' => DateTimeType::HTML5_FORMAT,
             ))
             ->add('autogoal', 'checkbox');
     }
