@@ -26,9 +26,18 @@ class Game extends AbstractEntity
     protected $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="League")
+     * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
+     * @Serializer\Exclude()
+     *
+     * @var League
+     */
+    protected $league;
+
+    /**
      * @ORM\Column(name="blue_score", type="integer")
      * @Assert\NotBlank()
-     * 
+     *
      * @var integer
      */
     protected $blueScore;
@@ -36,7 +45,7 @@ class Game extends AbstractEntity
     /**
      * @ORM\Column(name="red_score", type="integer")
      * @Assert\NotBlank()
-     * 
+     *
      * @var integer
      */
     protected $redScore;
@@ -98,6 +107,42 @@ class Game extends AbstractEntity
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param League $league
+     *
+     * @return $this
+     */
+    public function setLeague($league)
+    {
+        $this->league = $league;
+
+        return $this;
+    }
+
+    /**
+     * @return League
+     */
+    public function getLeague()
+    {
+        return $this->league;
+    }
+
+    /**
+     * @Serializer\VirtualProperty()
+     * @Serializer\SerializedName("league_id")
+     * @Serializer\Type("integer")
+     *
+     * @return integer
+     */
+    public function getLeagueId()
+    {
+        if (!$this->getLeague()) {
+          return null;
+        }
+
+        return $this->getLeague()->getId();
     }
 
     /**

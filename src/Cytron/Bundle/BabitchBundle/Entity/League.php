@@ -25,6 +25,14 @@ class League extends AbstractEntity
      */
     protected $id;
 
+     /**
+     * @ORM\OneToMany(targetEntity="Game", mappedBy="league")
+     * @Serializer\Exclude()
+     *
+     * @var ArrayCollection
+     */
+    protected $games;
+
     /**
      * @ORM\Column(name="name", type="string")
      * @Assert\NotBlank()
