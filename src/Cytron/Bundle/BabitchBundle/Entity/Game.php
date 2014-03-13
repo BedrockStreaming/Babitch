@@ -13,6 +13,10 @@ use JMS\Serializer\Annotation as Serializer;
  * @ORM\Entity()
  * @ORM\Table(name="game")
  * @Hateoas\Relation("self", href = @Hateoas\Route("get_game", parameters = { "id" = ".id"}))
+ * @Hateoas\Relation("league",
+ *   href =  @Hateoas\Route("get_league", parameters = { "id" = ".leagueId" }),
+ *   excludeIf = { ".leagueId" = null }
+ * )
  */
 class Game extends AbstractEntity
 {

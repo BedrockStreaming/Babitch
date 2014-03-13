@@ -58,6 +58,8 @@ Feature: Post new Game
         And the JSON node "goals[0].autogoal" should be equal to "0"
         And the JSON node "goals[0].scored_at" should be equal to "2014-02-14 14:36:16"
         And the JSON node "goals[1].scored_at" should be equal to ""
+        And the JSON node "_links.self.href" should be equal to "http://localhost/v1/games/1"
+        And the JSON node "_links.league.href" should be equal to "http://localhost/v1/leagues/1"
 
         When I send a DELETE request on "/v1/games/1"
         Then the response status code should be 204
