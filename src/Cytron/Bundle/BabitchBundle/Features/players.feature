@@ -1,6 +1,6 @@
 Feature: Players Ressource
 
-    Scenario: POST a player, GET it, then GET player listing, finnaly DELETE it
+    Scenario: POST a player, GET it, then GET player listing, finally DELETE it
         Given I add "CONTENT_TYPE" header equal to "application/json"
         When I send a POST request on "/v1/players" with body:
             """

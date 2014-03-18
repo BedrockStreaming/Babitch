@@ -8,6 +8,7 @@ use Behat\MinkExtension\Context\MinkContext;
 use Behat\Behat\Event\ScenarioEvent;
 use Behat\Gherkin\Node\TableNode;
 use Cytron\Bundle\BabitchBundle\Entity\Player;
+use Cytron\Bundle\BabitchBundle\Entity\League;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -62,6 +63,20 @@ class FeatureContext extends BehatContext implements KernelAwareInterface
             $player->setName($row[0]);
             $player->setEmail($row[1]);
             $playerManager->persist($player, true);
+        }
+    }
+
+    /**
+     * @Given /^I have leagues:$/
+     */
+    public function iHaveLeagues(TableNode $table)
+    {
+        $leagueManager = $this->kernel->getContainer()->get('cytron_babitch.league.manager');
+
+        foreach ($table->getRows() as $row) {
+            $league = new League();
+            $league->setName($row[0]);
+            $leagueManager->persist($league, true);
         }
     }
 
