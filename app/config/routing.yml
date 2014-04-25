@@ -5,8 +5,3 @@ NelmioApiDocBundle:
 CytronBabitchBundle_API:
     resource: "@CytronBabitchBundle/Resources/config/routing.yml"
     prefix:   /v1
-
-CytronBabitchBundle_Front:
-    resource: "@CytronBabitchBundle/Controller/FrontController.php"
-    type:     annotation
-    prefix:   /
