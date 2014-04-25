@@ -1,4 +1,4 @@
-# Babitch
+# Babitch [![Build Status](https://secure.travis-ci.org/M6Web/Babitch.png?branch=master)](http://travis-ci.org/M6Web/Babitch)
 
 Many companies all over the world uses table soccer to build team spirit. Babitch is a project to **record** table soccer scores, **archive** them, and **make them easily accessible for** further analysis using a REST API.
 

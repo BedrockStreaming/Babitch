@@ -13,6 +13,10 @@ use JMS\Serializer\Annotation as Serializer;
  * @ORM\Entity()
  * @ORM\Table(name="game")
  * @Hateoas\Relation("self", href = @Hateoas\Route("get_game", parameters = { "id" = ".id"}))
+ * @Hateoas\Relation("league",
+ *   href =  @Hateoas\Route("get_league", parameters = { "id" = ".leagueId" }),
+ *   excludeIf = { ".leagueId" = null }
+ * )
  */
 class Game extends AbstractEntity
 {
@@ -26,9 +30,18 @@ class Game extends AbstractEntity
     protected $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="League")
+     * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
+     * @Serializer\Exclude()
+     *
+     * @var League
+     */
+    protected $league;
+
+    /**
      * @ORM\Column(name="blue_score", type="integer")
      * @Assert\NotBlank()
-     * 
+     *
      * @var integer
      */
     protected $blueScore;
@@ -36,7 +49,7 @@ class Game extends AbstractEntity
     /**
      * @ORM\Column(name="red_score", type="integer")
      * @Assert\NotBlank()
-     * 
+     *
      * @var integer
      */
     protected $redScore;
@@ -58,6 +71,18 @@ class Game extends AbstractEntity
      * @Serializer\SerializedName("goals")
      */
     protected $goals;
+
+    /**
+     * @ORM\Column(name="started_at", type="datetime", nullable=true)
+     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     */
+    protected $startedAt;
+
+    /**
+     * @ORM\Column(name="ended_at", type="datetime", nullable=true)
+     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     */
+    protected $endedAt;
 
     /**
      * Constructor
@@ -86,6 +111,42 @@ class Game extends AbstractEntity
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param League $league
+     *
+     * @return $this
+     */
+    public function setLeague($league)
+    {
+        $this->league = $league;
+
+        return $this;
+    }
+
+    /**
+     * @return League
+     */
+    public function getLeague()
+    {
+        return $this->league;
+    }
+
+    /**
+     * @Serializer\VirtualProperty()
+     * @Serializer\SerializedName("league_id")
+     * @Serializer\Type("integer")
+     *
+     * @return integer
+     */
+    public function getLeagueId()
+    {
+        if (!$this->getLeague()) {
+          return null;
+        }
+
+        return $this->getLeague()->getId();
     }
 
     /**
@@ -230,5 +291,53 @@ class Game extends AbstractEntity
         $this->goals->removeElement($goal);
 
         return $this;
+    }
+
+    /**
+     * Set start date
+     *
+     * @param \DateTime $date Start date
+     *
+     * @return $this
+     */
+    public function setStartedAt(\DateTime $date = null)
+    {
+        $this->startedAt = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get start date
+     *
+     * @return \DateTime
+     */
+    public function getStartedAt()
+    {
+        return $this->startedAt;
+    }
+
+    /**
+     * Set end date
+     *
+     * @param \DateTime $date End date
+     *
+     * @return $this
+     */
+    public function setEndedAt(\DateTime $date = null)
+    {
+        $this->endedAt = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get end date
+     *
+     * @return \DateTime
+     */
+    public function getEndedAt()
+    {
+        return $this->endedAt;
     }
 }

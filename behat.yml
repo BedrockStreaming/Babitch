@@ -2,9 +2,10 @@ default:
     extensions:
         Sanpi\Behatch\Extension:
             contexts:
-                json: ~
+                json:
+                    evaluation_mode: javascript
                 rest: ~
-        Behat\Symfony2Extension\Extension: 
+        Behat\Symfony2Extension\Extension:
             bundle: CytronBabitchBundle
             mink_driver: true
         Behat\MinkExtension\Extension:

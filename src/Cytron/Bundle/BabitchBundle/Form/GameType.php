@@ -20,6 +20,12 @@ class GameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('league_id', 'entity', array(
+                'empty_value'   => 'Select league',
+                'property_path' => 'league',
+                'class'         => 'CytronBabitchBundle:League',
+                'property'      => 'name',
+            ))
             ->add('blue_score', 'integer')
             ->add('red_score', 'integer')
             ->add('player', 'collection', array(
@@ -34,6 +40,14 @@ class GameType extends AbstractType
                 'allow_add'     => true,
                 'allow_delete'  => true,
                 'by_reference'  => false,
+            ))
+            ->add('started_at', 'datetime', array(
+                'widget' => 'single_text',
+                'format' => DateTimeType::HTML5_FORMAT,
+            ))
+            ->add('ended_at', 'datetime', array(
+                'widget' => 'single_text',
+                'format' => DateTimeType::HTML5_FORMAT,
             ));
     }
 
@@ -55,4 +69,3 @@ class GameType extends AbstractType
         return 'game';
     }
 }
- 
