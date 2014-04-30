@@ -28,7 +28,8 @@ Edit this new file to setup your MySQL connection.
 
 ## Use
 
-The API documentation is available at `http://babitch-server/api/doc/`
+The API documentation is available at `http://babitch-server/api/doc/`  
+Thanks to [Stage1](http://stage1.io/), you can access our master branch staging environment : http://master.m6web.babitch.stage1.io/api/doc/
 
 Then, you have to create a client to access Babitch's API, or you can use ours : [BabitchClient](https://github.com/M6Web/BabitchClient)
 
