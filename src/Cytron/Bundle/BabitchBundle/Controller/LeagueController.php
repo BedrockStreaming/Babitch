@@ -23,7 +23,7 @@ class LeagueController extends FOSRestController implements ClassResourceInterfa
     use PaginatorTrait;
 
     /**
-     * Create an player
+     * Create an league
      *
      * @param Request $request
      *
@@ -31,7 +31,7 @@ class LeagueController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *   section="League",
-     *   description="Create a player",
+     *   description="Create a league",
      *   input={"class"="Cytron\Bundle\BabitchBundle\Form\LeagueType", "name"=""},
      *   output="Cytron\Bundle\BabitchBundle\Entity\League",
      *   statusCodes={
@@ -105,7 +105,7 @@ class LeagueController extends FOSRestController implements ClassResourceInterfa
      *
      * @ApiDoc(
      *   section="League",
-     *   description="Get players list",
+     *   description="Get leagues list",
      *   output="Cytron\Bundle\BabitchBundle\Entity\League",
      *   statusCodes={
      *     200="OK",
