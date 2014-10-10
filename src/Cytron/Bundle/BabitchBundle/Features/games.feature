@@ -7,16 +7,12 @@ Feature: Post new Game
         |raoul3|raoul3@test.fr|
         |raoul4|raoul4@test.fr|
 
-        Given I have leagues:
-        |Ligue 1|
-
 
     Scenario: Create a new game
         Given I add "CONTENT_TYPE" header equal to "application/json"
         When I send a POST request on "/v1/games" with body:
             """
             {
-                "league_id"  : 1,
                 "blue_score" : 10,
                 "red_score"  : 0,
                 "started_at" : "2014-02-14 14:32:19",
@@ -47,7 +43,6 @@ Feature: Post new Game
         When I send a GET request on "/v1/games/1"
         Then the response status code should be 200
         And the response should be in JSON
-        And the JSON node "league_id" should be equal to "1"
         And the JSON node "blue_score" should be equal to "10"
         And the JSON node "red_score" should be equal to "0"
         And the JSON node "started_at" should be equal to "2014-02-14 14:32:19"
@@ -59,7 +54,6 @@ Feature: Post new Game
         And the JSON node "goals[0].scored_at" should be equal to "2014-02-14 14:36:16"
         And the JSON node "goals[1].scored_at" should be equal to ""
         And the JSON node "_links.self.href" should be equal to "http://localhost/v1/games/1"
-        And the JSON node "_links.league.href" should be equal to "http://localhost/v1/leagues/1"
 
         When I send a DELETE request on "/v1/games/1"
         Then the response status code should be 204

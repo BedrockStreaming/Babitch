@@ -8,9 +8,6 @@ parameters:
     cytron_babitch.player.manager.class: 'Cytron\Bundle\BabitchBundle\Manager\PlayerManager'
     cytron_babitch.player.entity.name:   'CytronBabitchBundle:Player'
 
-    cytron_babitch.league.manager.class: 'Cytron\Bundle\BabitchBundle\Manager\LeagueManager'
-    cytron_babitch.league.entity.name:   'CytronBabitchBundle:League'
-
 services:
     cytron_babitch.game.manager:
         class: %cytron_babitch.game.manager.class%
@@ -23,7 +20,3 @@ services:
     cytron_babitch.player.manager:
         class: %cytron_babitch.player.manager.class%
         arguments: [ @doctrine.orm.entity_manager, %cytron_babitch.player.entity.name% ]
-
-    cytron_babitch.league.manager:
-        class: %cytron_babitch.league.manager.class%
-        arguments: [ @doctrine.orm.entity_manager, %cytron_babitch.league.entity.name% ]
