@@ -71,6 +71,12 @@ $ php composer.phar install
 
 *Note : select default values to all questions.*
 
+#### Load fixtures
+
+```
+$  php app/console doctrine:fixture:load
+```
+
 You can now access the API doc at `http://localhost:8888/api/doc`.
 
 ## Tests
