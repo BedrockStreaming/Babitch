@@ -13,10 +13,6 @@ use JMS\Serializer\Annotation as Serializer;
  * @ORM\Entity()
  * @ORM\Table(name="game")
  * @Hateoas\Relation("self", href = @Hateoas\Route("get_game", parameters = { "id" = ".id"}))
- * @Hateoas\Relation("league",
- *   href =  @Hateoas\Route("get_league", parameters = { "id" = ".leagueId" }),
- *   excludeIf = { ".leagueId" = null }
- * )
  */
 class Game extends AbstractEntity
 {
@@ -28,15 +24,6 @@ class Game extends AbstractEntity
      * @var integer
      */
     protected $id;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="League")
-     * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
-     * @Serializer\Exclude()
-     *
-     * @var League
-     */
-    protected $league;
 
     /**
      * @ORM\Column(name="blue_score", type="integer")
@@ -111,42 +98,6 @@ class Game extends AbstractEntity
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param League $league
-     *
-     * @return $this
-     */
-    public function setLeague($league)
-    {
-        $this->league = $league;
-
-        return $this;
-    }
-
-    /**
-     * @return League
-     */
-    public function getLeague()
-    {
-        return $this->league;
-    }
-
-    /**
-     * @Serializer\VirtualProperty()
-     * @Serializer\SerializedName("league_id")
-     * @Serializer\Type("integer")
-     *
-     * @return integer
-     */
-    public function getLeagueId()
-    {
-        if (!$this->getLeague()) {
-          return null;
-        }
-
-        return $this->getLeague()->getId();
     }
 
     /**

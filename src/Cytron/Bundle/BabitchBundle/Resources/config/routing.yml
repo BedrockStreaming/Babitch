@@ -5,7 +5,3 @@ CytronBabitchBundle_Game:
 CytronBabitchBundle_Player:
     resource: "@CytronBabitchBundle/Controller/PlayerController.php"
     type:     rest
-
-CytronBabitchBundle_League:
-    resource: "@CytronBabitchBundle/Controller/LeagueController.php"
-    type:     rest
