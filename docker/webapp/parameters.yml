@@ -1,0 +1,11 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: m6web-babitch-db
+    database_port: 3306
+    database_name: babitch
+    database_user: babitch
+    database_password: babitch
+    database_path: null
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    database_socket: null

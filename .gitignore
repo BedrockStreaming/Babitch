@@ -11,3 +11,4 @@ composer.phar
 Vagrantfile
 .vagrant/
 web/bundles
+docker/webapp/sources/*

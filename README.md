@@ -94,6 +94,21 @@ Run tests
 php bin/behat
 ```
 
+## Docker
+To use Docker as simple user (logout after this command):
+
+    sudo usermod -aG docker $USER
+
+Then deploy Babitch using `deploy.sh` script:
+
+    ./docker/deploy.sh
+
+Or manually copy sources into `docker/webapp/sources/` directory and run the command below:
+
+    docker-compose up -d
+
+You now have a Babitch listening on port `8081`, Mysql on port `3306` and Php-Fpm on port `9000`!
+
 ## Credits
 
 Developped by the [Cytron Team](http://cytron.fr/) of [M6 Web](http://tech.m6web.fr/).
