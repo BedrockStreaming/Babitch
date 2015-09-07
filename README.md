@@ -107,7 +107,7 @@ Or manually copy sources into `docker/webapp/sources/` directory and run the com
 
     docker-compose up -d
 
-You now have a Babitch listening on port `8081`, Mysql on port `3306` and Php-Fpm on port `9000`!
+You now have a Babitch instance listening on port `8081`, Mysql on port `3306` and PHP-FPM on port `9000`!
 
 ## Credits
 
