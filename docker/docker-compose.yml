@@ -1,0 +1,37 @@
+m6web-babitch-webapp:
+    container_name: m6web-babitch-webapp
+    build: webapp
+    links:
+        - m6web-babitch-db
+    tty: true
+
+m6web-babitch-db:
+    container_name: m6web-babitch-db
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=babitch
+      - MYSQL_USER=babitch
+      - MYSQL_PASSWORD=babitch
+    ports:
+        - 3306:3306
+    tty: true
+
+m6web-babitch-php:
+    container_name: m6web-babitch-php
+    build: php
+    ports:
+        - 9000:9000
+    volumes_from:
+        - m6web-babitch-webapp
+    links:
+        - m6web-babitch-db
+m6web-babitch-server:
+    container_name: m6web-babitch-server
+    build: server
+    ports:
+        - 8081:80
+    links:
+        - m6web-babitch-php
+    volumes_from:
+        - m6web-babitch-webapp
